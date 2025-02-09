@@ -8,7 +8,6 @@ class Solution {
             StringBuilder sb = new StringBuilder(String.valueOf(val));
             int reverse = Integer.parseInt(sb.reverse().toString());
             int tot = val-reverse;
-            System.out.println(val+" "+reverse+" "+tot);
             if(!map.containsKey(tot)) map.put(tot,1);
             else{
                 nicepairs+=map.get(tot);
