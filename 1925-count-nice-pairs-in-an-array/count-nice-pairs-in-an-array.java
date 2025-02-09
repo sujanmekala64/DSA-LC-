@@ -2,7 +2,7 @@ class Solution {
     public int countNicePairs(int[] nums) {
         HashMap<Integer,Integer> map = new HashMap<>();
         int nicepairs=0;
-        int MOD=1_000_000_007;
+        int MOD=1000000007;
         for(int i=0;i<nums.length;i++){
             int val = nums[i];
             StringBuilder sb = new StringBuilder(String.valueOf(val));
