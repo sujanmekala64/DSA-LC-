@@ -26,7 +26,6 @@ class Solution {
                 map.put(digits,li);
             }
             else{
-                // System.out.println(value+" "+digits+" "+map.get(digits).get(1));
                 if(map.get(digits).get(1)==0){
                     List<Integer> newli = new ArrayList<>();
                     int newval = map.get(digits).get(0)+value;
@@ -34,7 +33,6 @@ class Solution {
                     newli.add(1);
                     map.put(digits,newli);
                     ans=Math.max(ans,newval);
-                    
                 }
             }
         }
