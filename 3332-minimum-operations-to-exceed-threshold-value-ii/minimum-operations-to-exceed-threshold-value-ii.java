@@ -8,7 +8,7 @@ class Solution {
                 long first = pq.poll();
                 long second = pq.poll();
                 if(first>=k) break;
-                long val = second + 2*(first);
+                long val = first*2+second;
                 pq.add(val);
             }
             else break;
