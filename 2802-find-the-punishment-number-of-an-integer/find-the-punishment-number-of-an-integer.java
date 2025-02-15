@@ -6,7 +6,7 @@ class Solution {
         int sum=0;
         for(int i=idx;i<str.length();i++){
             sum=sum*10+(str.charAt(i)-'0');
-            if(sum>targetsum) break;
+            // if(sum>targetsum) break;
             if(check(i+1,str,targetsum-sum)) return true;
         }
         return false;
