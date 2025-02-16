@@ -9,10 +9,8 @@ class Solution {
             if(i==1 && check(n,idx+1,used,ans)) return true;
             else if(i>1 && i+idx<2*n-1 && ans[i+idx]==0){
                 ans[i+idx]=i;
-                // used[i]=false;
                 if(check(n,idx+1,used,ans)) return true;
                 ans[i+idx]=0;
-                // used[i]=true;
             }
             used[i]=false;
             ans[idx]=0;
