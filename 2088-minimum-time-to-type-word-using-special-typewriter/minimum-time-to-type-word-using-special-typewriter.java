@@ -8,7 +8,6 @@ class Solution {
             ans+=1;
             ans+=Math.min(diff,26-diff);
             prevchar=newchar;
-            System.out.println(i+" "+ans);
         }
         return ans;
     }
