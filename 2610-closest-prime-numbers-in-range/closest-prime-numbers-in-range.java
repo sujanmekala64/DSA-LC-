@@ -23,6 +23,7 @@ class Solution {
                 first=li.get(i-1);
                 second=li.get(i);
                 mini=val;
+                if(val<=2) break; 
             }
         }
         return new int[]{first,second};
