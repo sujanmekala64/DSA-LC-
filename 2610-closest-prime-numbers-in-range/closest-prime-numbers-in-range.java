@@ -8,11 +8,10 @@ class Solution {
     public int[] closestPrimes(int left, int right) {
         List<Integer> li = new ArrayList<>();
         if(left==1) left++;
-        for(int i=left;i<=right;i++){
-            
-            // if(i%2!=0){
+        for(int i=left;i<=right;i++){  
+            if(i==2 || i%2!=0){
                 if(isPrime(i)) li.add(i);
-            // }
+            }
         }
         if(li.size()<=1) return new int[]{-1,-1};
         int ans[] = new int[2];
