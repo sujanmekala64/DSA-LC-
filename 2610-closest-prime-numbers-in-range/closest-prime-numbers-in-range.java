@@ -1,7 +1,5 @@
 class Solution {
     public boolean isPrime(int n){
-        if(n==1) return false;
-        if(n==2) return true;
         for(int i=2;i*i<=n;i++){
             if(n%i==0) return false;
         }
@@ -9,12 +7,15 @@ class Solution {
     }
     public int[] closestPrimes(int left, int right) {
         List<Integer> li = new ArrayList<>();
+        if(left==1) left++;
         for(int i=left;i<=right;i++){
+            
             // if(i%2!=0){
                 if(isPrime(i)) li.add(i);
             // }
         }
         if(li.size()<=1) return new int[]{-1,-1};
+        int ans[] = new int[2];
         int mini=Integer.MAX_VALUE;
         int first=-1;
         int last=-1;
@@ -25,6 +26,8 @@ class Solution {
                 mini=li.get(i)-li.get(i-1);
             }
         }
-        return new int[]{first,last};
+        ans[0]=first;
+        ans[1]=last;
+        return ans;
     }
 }
