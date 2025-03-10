@@ -15,9 +15,8 @@ class Solution {
                     lastvowel=j;
                 }
                 else cnter++;
-                if(set.size()==5 && cnter==0){
-                    cnt+=1;
-                }
+                if(set.size()==5 && cnter==0) cnt+=1;
+
             }
         }
         return cnt;
