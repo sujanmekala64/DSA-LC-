@@ -14,9 +14,8 @@ class Solution {
                     set.add(word.charAt(j));
                     lastvowel=j;
                 }
-                else cnter++;
+                else break;
                 if(set.size()==5 && cnter==0) cnt+=1;
-
             }
         }
         return cnt;
