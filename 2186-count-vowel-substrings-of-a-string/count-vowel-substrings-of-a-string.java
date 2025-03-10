@@ -8,16 +8,11 @@ class Solution {
         Set<Character> set = new HashSet<>();
         for(int i=0;i<word.length();i++){
             if(!isVowel(word.charAt(i))) continue;
-            int lastvowel=-1;
             set.clear();
-            int cnter=0;
             for(int j=i;j<word.length();j++){
-                if(isVowel(word.charAt(j))){
-                    set.add(word.charAt(j));
-                    lastvowel=j;
-                }
+                if(isVowel(word.charAt(j))) set.add(word.charAt(j));
                 else break;
-                if(set.size()==5 && cnter==0) cnt+=1;
+                if(set.size()==5) cnt+=1;
             }
         }
         return cnt;
