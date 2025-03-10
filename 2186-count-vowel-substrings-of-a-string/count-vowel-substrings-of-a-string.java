@@ -6,6 +6,7 @@ class Solution {
     public int countVowelSubstrings(String word) {
         int cnt=0;
         for(int i=0;i<word.length();i++){
+            if(!isVowel(word.charAt(i))) continue;
             int lastvowel=-1;
             Set<Character> set = new HashSet<>();
             int cnter=0;
