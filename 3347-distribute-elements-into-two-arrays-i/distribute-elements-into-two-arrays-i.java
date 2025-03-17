@@ -16,15 +16,14 @@ class Solution {
                 prev2=nums[i];
             }
         }
-        int ans[] = new int[nums.length];
         int cnt=0;
         for(int i=0;i<arr1.size();i++){
-            ans[i]=arr1.get(i);
+            nums[i]=arr1.get(i);
             cnt++;
         }
         for(int i=0;i<arr2.size();i++){
-            ans[cnt++]=arr2.get(i);
+            nums[cnt++]=arr2.get(i);
         }
-        return ans;
+        return nums;
     }
 }
