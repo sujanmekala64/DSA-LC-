@@ -25,7 +25,6 @@ class Solution {
         for(int i=0;i<ans.size();i+=2){
             val+=ans.get(i+1)-ans.get(i)+1;
         }
-        System.out.println(ans);
         return days-val;
     }
 }
