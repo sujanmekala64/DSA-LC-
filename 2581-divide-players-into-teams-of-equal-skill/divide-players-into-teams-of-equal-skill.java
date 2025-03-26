@@ -11,7 +11,6 @@ class Solution {
             if(add!=val) return -1;
             long mul=skill[i]*skill[n-i-1];
             ans+=mul;
-            System.out.println(ans+" "+mul);
         }
         return ans;
     }
