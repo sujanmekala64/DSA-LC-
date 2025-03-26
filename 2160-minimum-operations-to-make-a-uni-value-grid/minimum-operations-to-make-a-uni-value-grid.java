@@ -10,21 +10,25 @@ class Solution {
             }
         }
         Arrays.sort(arr);
-        int val=arr[n/2];
-        int index=0;
+        int median=arr[n/2];
         int cnt=0;
-        while(index<n){
-            while(arr[index]<val){
-                cnt++;
-                arr[index]+=x;
-            }
-            while(arr[index]>val){
-                cnt++;
-                arr[index]-=x;
-            }
-            if(arr[index]!=val) return -1;
-            index++;
+        for(int num:arr){
+            if(num==median) continue;
+            if(Math.abs(num-median)%x!=0) return -1;
+            cnt+=Math.abs(num-median)/x;
         }
+        // while(index<n){
+        //     while(arr[index]<val){
+        //         cnt++;
+        //         arr[index]+=x;
+        //     }
+        //     while(arr[index]>val){
+        //         cnt++;
+        //         arr[index]-=x;
+        //     }
+        //     if(arr[index]!=val) return -1;
+        //     index++;
+        // }
         return cnt;
     }
 }
