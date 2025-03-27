@@ -15,11 +15,9 @@ class Solution {
         if(dom==-1) return -1;
         int cntdom=0;
         int freq=map.get(dom);
-        System.out.println(dom+" "+freq);
         for(int i=0;i<nums.size();i++){
             if(nums.get(i)==dom) cntdom++;
             if((cntdom*2)>(i+1) && ((freq-cntdom)*2)>(nums.size()-i-1)) return i;
-            // System.out.println(i+" "+cntdom);
         }
         return -1;
     }
