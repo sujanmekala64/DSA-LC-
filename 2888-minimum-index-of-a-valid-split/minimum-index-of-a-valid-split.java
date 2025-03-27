@@ -2,8 +2,7 @@ class Solution {
     public int minimumIndex(List<Integer> nums) {
         HashMap<Integer,Integer> map = new HashMap<>();
         for(int val:nums){
-            if(!map.containsKey(val)) map.put(val,1);
-            else map.put(val,map.get(val)+1);
+           map.put(val, map.getOrDefault(val, 0) + 1);
         }
         int dom=-1;
         for(Integer key:map.keySet()){
