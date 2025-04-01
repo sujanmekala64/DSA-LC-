@@ -8,7 +8,7 @@ class Solution {
     }
     public long mostPoints(int[][] questions) {
         long dp[]=new long[questions.length+1];
-        Arrays.fill(dp,-1);
+        for(int i=0;i<=questions.length;i++) dp[i]=-1;
         return check(questions,0,dp);
     }
 }
