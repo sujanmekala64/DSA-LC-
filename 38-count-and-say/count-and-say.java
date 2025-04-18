@@ -18,7 +18,6 @@ class Solution {
     public String countAndSay(int n) {
         String ans="1";
         for(int i=1;i<n;i++){
-            System.out.println(ans);
             ans=iterate(ans);
         }
         return ans;
