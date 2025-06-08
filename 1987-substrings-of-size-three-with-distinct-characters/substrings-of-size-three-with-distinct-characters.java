@@ -11,11 +11,6 @@ class Solution {
         for(int i=3;i<s.length();i++){
             char prev = s.charAt(idx);
             char pres = s.charAt(i);
-            if(prev==pres){
-                idx++;
-                if(map.size()==3) ans++;
-                continue;
-            }
             map.put(pres,map.getOrDefault(pres,0)+1);
             map.put(prev,map.getOrDefault(prev,0)-1);
             if(map.get(prev)==0) map.remove(prev);
