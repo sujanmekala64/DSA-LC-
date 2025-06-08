@@ -5,7 +5,7 @@ class Solution {
             int cnt=1;
             for(int j=i+1;j<nums.length;j++){
                 if(nums[j]>nums[j-1]) cnt++;
-                else cnt=0;
+                else break;
                 ans=Math.max(ans,cnt);
             }
         }
