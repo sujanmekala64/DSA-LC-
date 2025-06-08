@@ -15,10 +15,7 @@ class Solution {
             map.put(pres,map.getOrDefault(pres,0)+1);
             map.put(prev,map.getOrDefault(prev,0)-1);
             if(map.get(prev)==0) map.remove(prev);
-            if(map.size()==3){
-                System.out.println(i);
-                ans++;
-            }
+            if(map.size()==3) ans++;
             idx++;
         }
         return ans;
