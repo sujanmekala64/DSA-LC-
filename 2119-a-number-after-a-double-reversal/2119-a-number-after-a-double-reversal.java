@@ -11,9 +11,7 @@ class Solution {
     }
     public boolean isSameAfterReversals(int num) {
        int val1 = rev(num);
-       System.out.println(val1);
        int val2 = rev(val1);
-        System.out.println(val2);
        return num==val2;
     }
 }
