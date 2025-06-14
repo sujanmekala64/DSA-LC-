@@ -36,7 +36,6 @@ class Solution {
                 minans+=p;
             }
         }
-        System.out.println(maxans+" "+minans);
         int max = Integer.parseInt(maxans);
         int min = Integer.parseInt(minans);
         return max-min;
