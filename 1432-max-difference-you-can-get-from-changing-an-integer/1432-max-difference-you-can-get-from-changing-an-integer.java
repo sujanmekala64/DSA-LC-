@@ -3,6 +3,7 @@ class Solution {
         String val = String.valueOf(num);
         char maxi='-';
         char mini='-';
+        if(val.length()==1) return 8;
         for(int i=0;i<val.length();i++){
             char p=val.charAt(i);
             if(i!=0){
@@ -19,31 +20,63 @@ class Solution {
             }
             if(maxi!='-' && mini!='-') break;
         }
-        if(val.length()==1) return 8;
-        String maxval="";
-        String minval="";
-        for(char p:val.toCharArray()){
+        int max=0;
+        int min=0;
+        int rem=0;
+        StringBuilder sb=new StringBuilder();
+        while(num>0){
+            int v = num%10;
+            num/=10;
+            char p = (char)(v+'0');
             if(p==maxi && p==mini){
-                maxval+='9';
-                if(p==val.charAt(0)) minval+='1';
-                else minval+='0';
-            }
+                max=9;
+                if(p==val.charAt(0)) min=1;
+                else min=0;
+            } 
             else if(p==maxi){
-                maxval+='9';
-                minval+=p;
+                max=9;
+                min=v;
             }
             else if(p==mini){
-                maxval+=p;
-                if(p==val.charAt(0)) minval+='1';
-                else minval+='0';
+                max=v;
+                if(p==val.charAt(0)) min=1;
+                else min=0;
             }
             else{
-                maxval+=p;
-                minval+=p;
+                max=v;
+                min=v;
             }
+            int vals = rem+max-min;
+            sb.append(vals);
+            if(max<min) rem=-1;
+            else rem=0;
         }
-        int max = Integer.parseInt(maxval);
-        int min = Integer.parseInt(minval);
-        return max-min;
+        String s = sb.reverse().toString();
+        return Integer.parseInt(s);
+        // String maxval="";
+        // String minval="";
+        // for(char p:val.toCharArray()){
+        //     if(p==maxi && p==mini){
+        //         maxval+='9';
+        //         if(p==val.charAt(0)) minval+='1';
+        //         else minval+='0';
+        //     }
+        //     else if(p==maxi){
+        //         maxval+='9';
+        //         minval+=p;
+        //     }
+        //     else if(p==mini){
+        //         maxval+=p;
+        //         if(p==val.charAt(0)) minval+='1';
+        //         else minval+='0';
+        //     }
+        //     else{
+        //         maxval+=p;
+        //         minval+=p;
+        //     }
+        // }
+        // int max = Integer.parseInt(maxval);
+        // int min = Integer.parseInt(minval);
+        // return max-min;
     }
 }
