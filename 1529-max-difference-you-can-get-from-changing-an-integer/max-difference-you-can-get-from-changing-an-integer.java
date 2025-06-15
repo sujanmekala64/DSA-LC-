@@ -24,7 +24,6 @@ class Solution {
         int min=0;
         int rem=0;
         int ans=0;
-        StringBuilder sb=new StringBuilder();
         for(int i=0;i<val.length();i++){
             char p = val.charAt(i);
             int v = (p-'0');
