@@ -42,7 +42,6 @@ class Solution {
                 minval+=p;
             }
         }
-        System.out.println(maxval+" "+minval+" "+maxi+" "+mini);
         int max = Integer.parseInt(maxval);
         int min = Integer.parseInt(minval);
         return max-min;
