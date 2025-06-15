@@ -23,11 +23,11 @@ class Solution {
         int max=0;
         int min=0;
         int rem=0;
+        int ans=0;
         StringBuilder sb=new StringBuilder();
-        while(num>0){
-            int v = num%10;
-            num/=10;
-            char p = (char)(v+'0');
+        for(int i=0;i<val.length();i++){
+            char p = val.charAt(i);
+            int v = (p-'0');
             if(p==maxi && p==mini){
                 max=9;
                 if(p==val.charAt(0)) min=1;
@@ -47,12 +47,11 @@ class Solution {
                 min=v;
             }
             int vals = rem+max-min;
-            sb.append(vals);
+            ans=ans*10+vals;
             if(max<min) rem=-1;
             else rem=0;
         }
-        String s = sb.reverse().toString();
-        return Integer.parseInt(s);
+        return ans;
         // String maxval="";
         // String minval="";
         // for(char p:val.toCharArray()){
