@@ -1,11 +1,11 @@
 class Solution {
     public int maximumDifference(int[] nums) {
-        int ans=-1;
-        int mini=nums[0];
-        for(int i=1;i<nums.length;i++){
-            if(nums[i]<mini) mini=nums[i];
-            else if((nums[i]-mini)>ans) ans=nums[i]-mini;
+        int min=Integer.MAX_VALUE;
+        int max=-1;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]<min) min=nums[i];
+            if(nums[i]-min>max) max=nums[i]-min;
         }
-        return ans;
+        return max==0?-1:max;
     }
 }
