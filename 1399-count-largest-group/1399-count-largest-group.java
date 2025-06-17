@@ -9,7 +9,7 @@ class Solution {
     }
     public int countLargestGroup(int n) {
         int max=0;
-        int arr[] = new int[37];
+        int arr[] = new int[37]; //used 37 because the highest was 10 power 5, 9999 so it has sum of digits highest as 36,it cant exceed more than that for any value
         for(int i=1;i<=n;i++){
             int val=sum(i);
             arr[val]++;
