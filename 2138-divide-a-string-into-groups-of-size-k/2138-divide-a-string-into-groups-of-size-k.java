@@ -1,7 +1,6 @@
 class Solution {
     public String[] divideString(String s, int k, char fill) {
         int val = (int)(Math.ceil((double)s.length()/k));
-        System.out.println(val);
         String ans[] = new String[val];
         int idx=0;
         int cnt=0;
@@ -11,7 +10,6 @@ class Solution {
                 ans[idx]=s.substring(cnt,cnt+k);
             } 
             if(cnt+k>s.length()) break; 
-            System.out.println(ans[idx]+" "+cnt+" "+idx);
             cnt+=k;
             idx++;
         }
