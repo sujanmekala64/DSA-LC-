@@ -4,12 +4,15 @@ class Solution {
         Arrays.sort(players);
         int ans=0;
         int idx=trainers.length-1;
-        for(int i=players.length-1;i>=0;i--){
+        int i=players.length-1;
+        while(i>=0 && idx>=0){
             if(players[i]<=trainers[idx]){
                 ans++;
                 idx--;
+                System.out.println(players[i]);
             }
-            if(idx<0) return ans;
+            System.out.println(i+" "+idx);
+            i--;
         }
         return ans;
     }
