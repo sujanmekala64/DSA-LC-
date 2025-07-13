@@ -9,9 +9,7 @@ class Solution {
             if(players[i]<=trainers[idx]){
                 ans++;
                 idx--;
-                System.out.println(players[i]);
             }
-            System.out.println(i+" "+idx);
             i--;
         }
         return ans;
