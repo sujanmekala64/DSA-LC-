@@ -1,16 +1,15 @@
 class Solution {
     public int matchPlayersAndTrainers(int[] players, int[] trainers) {
-        List<Integer> tr = new ArrayList<>();
-        for(int num:trainers) tr.add(num);
-        Collections.sort(tr);
+        Arrays.sort(trainers);
         Arrays.sort(players);
         int ans=0;
+        int idx=trainers.length-1;
         for(int i=players.length-1;i>=0;i--){
-            if(players[i]<=tr.get(tr.size()-1)){
+            if(players[i]<=trainers[idx]){
                 ans++;
-                tr.remove(tr.size()-1);
+                idx--;
             }
-            if(tr.size()==0) break;
+            if(idx<0) break;
         }
         return ans;
     }
