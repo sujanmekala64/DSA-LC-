@@ -9,7 +9,7 @@ class Solution {
                 ans++;
                 idx--;
             }
-            if(idx<0) break;
+            if(idx<0) return ans;
         }
         return ans;
     }
