@@ -1,19 +1,24 @@
 class Solution {
+    public boolean isVowel(char p){
+        if(p=='a' || p=='e' || p=='i' || p=='o' || p=='u' || p=='A' || p=='E' || p=='I' || p=='O' || p=='U') return true;
+        return false;
+    }
     public boolean isValid(String word) {
         if(word.length()<3) return false;
-        boolean charcheck = false;
-        boolean vowcheck = false;
-        boolean conscheck = false;
-        int c=0;
-        for(int i=0;i<word.length();i++){
-            char p=word.charAt(i);
-            if((p>='A' && p<='Z') || (p>='a' && p<='z') || (p>='0' && p<='9')) c++;
+        int vowels=0;
+        int cons=0;
+        int num=0;
+        for(char p:word.toCharArray()){
             if(Character.isAlphabetic(p)){
-                if(p=='a' || p=='e' || p=='i' || p=='o' || p=='u' || p=='A' || p=='E' || p=='I' || p=='O' || p=='U') vowcheck=true;
-                else conscheck=true;   
+                if(isVowel(p)) vowels++;
+                else cons++;
             }
+            else if(Character.isDigit(p)){
+                num++;
+            }
+            else return false;
         }
-        if(c==word.length()) charcheck=true;
-        return charcheck&&vowcheck&&conscheck;
+        if(cons>=1 && vowels>=1) return true;
+        return false;
     }
 }
