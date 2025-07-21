@@ -1,18 +1,13 @@
 class Solution {
     public String makeFancyString(String s) {
-        Stack<Character> st = new Stack<>();
-        for(char p:s.toCharArray()){
-            if(st.size()>=2){
-                char f = st.pop();
-                char f2 = st.peek();
-                st.push(f);
-                if(st.size()>=2 && p==f && p==f2){ }
-                else st.push(p);
-            }
-            else st.push(p);
+        String ans="";
+        if(s.length()==1) return s;
+        ans+=s.charAt(0);
+        for(int i=1;i<s.length()-1;i++){
+            char p=s.charAt(i);
+            if(p!=s.charAt(i-1) || p!=s.charAt(i+1)) ans+=p;
         }
-        StringBuilder sb=new StringBuilder();
-        while(!st.isEmpty()) sb.append(st.pop());
-        return sb.reverse().toString();
+        ans+=s.charAt(s.length()-1);
+        return ans;
     }
 }
