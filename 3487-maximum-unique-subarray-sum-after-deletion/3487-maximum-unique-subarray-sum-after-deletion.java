@@ -4,17 +4,13 @@ class Solution {
         int maxi=nums[0];
         HashSet<Integer> set = new HashSet<>();
         set.add(nums[0]);
-        for(int num:nums){
-            if(!set.contains(num)){
-                if(sum<=0 && num>0){
-                    sum=num;
-                }
-                else if(num>0){
-                    sum+=num;
-                }
-                maxi=Math.max(maxi,Math.max(num,sum));
-                set.add(num);
+        for(int i=1;i<nums.length;i++){
+            if(!set.contains(nums[i]) && nums[i]>0){
+                if(sum<0) sum=nums[i];
+                else sum+=nums[i];
+                set.add(nums[i]);
             }
+            maxi=Math.max(maxi,Math.max(nums[i],sum));
         }
         return maxi;
     }
