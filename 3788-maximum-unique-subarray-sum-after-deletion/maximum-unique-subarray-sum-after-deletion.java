@@ -1,18 +1,19 @@
 class Solution {
     public int maxSum(int[] nums) {
-        int maxi=Integer.MIN_VALUE;
-        for(int i=0;i<nums.length;i++){
-            for(int j=i;j<nums.length;j++){
-                HashSet<Integer> set = new HashSet<>();
-                int sum=0;
-                for(int k=i;k<=j;k++){
-                    if(!set.contains(nums[k])){
-                        if(k!=i && nums[k]<0) continue;
-                        set.add(nums[k]);
-                        sum+=nums[k];
-                        maxi=Math.max(maxi,sum);
-                    }
+        int sum=nums[0];
+        int maxi=nums[0];
+        HashSet<Integer> set = new HashSet<>();
+        set.add(nums[0]);
+        for(int num:nums){
+            if(!set.contains(num)){
+                if(sum<=0 && num>0){
+                    sum=num;
                 }
+                else if(num>0){
+                    sum+=num;
+                }
+                maxi=Math.max(maxi,Math.max(num,sum));
+                set.add(num);
             }
         }
         return maxi;
