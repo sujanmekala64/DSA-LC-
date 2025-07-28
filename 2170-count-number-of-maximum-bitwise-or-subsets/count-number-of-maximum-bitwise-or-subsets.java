@@ -8,7 +8,7 @@ class Solution {
     //     return Math.max(notinc,inc);
     // }
     public int findCount(int nums[],int idx,int val,int req,int dp[][]){
-        if(val>req) return 0;
+        // if(val>req) return 0;
         if(idx==nums.length){
             if(val==req) return 1;
             return 0;
