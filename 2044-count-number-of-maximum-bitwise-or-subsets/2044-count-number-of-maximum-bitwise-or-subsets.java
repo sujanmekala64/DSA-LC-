@@ -19,7 +19,6 @@ class Solution {
     }
     public int countMaxOrSubsets(int[] nums) {
         int maxxor=findMaxXor(nums,0,0);
-        System.out.println(maxxor);
         findCount(nums,0,0,maxxor);
         return ans;
     }
