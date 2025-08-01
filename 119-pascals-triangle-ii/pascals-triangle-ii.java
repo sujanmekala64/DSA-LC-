@@ -1,18 +1,17 @@
 class Solution {
-    public List<Integer> getans(List<Integer> li,int r){
-        long ans = 1;
-        r=r+1;
-        li.add(1);
-        for(int c=1;c<r;c++){
-            ans = ans*(r-c);
-            ans = ans/c;
-            li.add((int)ans);
-        }
-        return li;
-    }
     public List<Integer> getRow(int rowIndex) {
-        List<Integer> li = new ArrayList<>();
-        getans(li,rowIndex);
-        return li;
+        List<List<Integer>> ans = new ArrayList<>();
+        for(int i=0;i<=rowIndex;i++){
+            List<Integer> li = new ArrayList<>();
+            for(int j=0;j<=i;j++){
+                if(j==0 || j==i) li.add(1);
+                else{
+                    int val=ans.get(i-1).get(j-1)+ans.get(i-1).get(j);
+                    li.add(val);
+                }
+            }
+            ans.add(li);
+        }
+        return ans.get(rowIndex);
     }
 }
