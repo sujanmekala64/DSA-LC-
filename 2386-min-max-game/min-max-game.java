@@ -8,10 +8,12 @@ class Solution {
             int min=1;
             for(int i=0;i<li.size()-1;i+=2){
                 if(min==1){
-                    temp.add(Math.min(li.get(i),li.get(i+1)));
+                    if(li.get(i)<li.get(i+1)) temp.add(li.get(i));
+                    else temp.add(li.get(i+1));
                 }
                 else{
-                    temp.add(Math.max(li.get(i),li.get(i+1)));
+                    if(li.get(i)>li.get(i+1)) temp.add(li.get(i));
+                    else temp.add(li.get(i+1));
                 }
                 min=1-min;
             }
