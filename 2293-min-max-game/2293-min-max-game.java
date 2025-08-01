@@ -4,7 +4,6 @@ class Solution {
         for(int num:nums) li.add(num);
         while(li.size()!=1){
             List<Integer> temp = new ArrayList<>();
-            System.out.println(li);
             int min=1;
             for(int i=0;i<li.size()-1;i+=2){
                 if(min==1){
