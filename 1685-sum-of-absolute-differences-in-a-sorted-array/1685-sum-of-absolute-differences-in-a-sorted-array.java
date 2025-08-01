@@ -15,7 +15,6 @@ class Solution {
         }
         int ans[] = new int[n];
         for(int i=0;i<n;i++){
-            System.out.println(leftsum[i]+" "+nums[i]+" "+rightsum[i]);
             ans[i]=((nums[i]*i)-leftsum[i])+(rightsum[i]-(nums[i]*(n-i-1)));
         }
         return ans;
