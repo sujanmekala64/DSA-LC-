@@ -2,8 +2,9 @@ class Solution {
     public int minMaxGame(int[] nums) {
         List<Integer> li = new ArrayList<>();
         for(int num:nums) li.add(num);
+        List<Integer> temp = new ArrayList<>();
         while(li.size()!=1){
-            List<Integer> temp = new ArrayList<>();
+            temp = new ArrayList<>();
             int min=1;
             for(int i=0;i<li.size()-1;i+=2){
                 if(min==1){
