@@ -7,7 +7,6 @@ class Solution {
                 int w=0;
                 int b=0;
                 for(int k=0;k<4;k++){
-                    if(i+rows[k]>=grid.length || j+cols[k]>=grid[0].length) continue;
                     int row=i+rows[k];
                     int col=j+cols[k];
                     if(grid[row][col]=='W') w++;
