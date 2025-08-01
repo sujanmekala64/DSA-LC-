@@ -13,10 +13,9 @@ class Solution {
             rightsum[i]=sum;
             sum+=nums[i];
         }
-        int ans[] = new int[n];
         for(int i=0;i<n;i++){
-            ans[i]=((nums[i]*i)-leftsum[i])+(rightsum[i]-(nums[i]*(n-i-1)));
+            nums[i]=((nums[i]*i)-leftsum[i])+(rightsum[i]-(nums[i]*(n-i-1)));
         }
-        return ans;
+        return nums;
     }
 }
