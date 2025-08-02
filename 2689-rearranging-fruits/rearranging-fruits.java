@@ -26,11 +26,9 @@ class Solution {
             int freq1=b2.get(key);
             int freq2=0;
             if(b1.containsKey(key)) continue;
-            if(b1.containsKey(key)) freq2=b1.get(key);
-            if(Math.abs(freq1-freq2)%2==1) return -1;
             else{
-                int cnt=(Math.abs(freq1-freq2))/2;
-                for(int i=1;i<=cnt;i++) li.add(key);
+                int cnt=b2.get(key);
+                for(int i=0;i<cnt/2;i++) li.add(key);
             }
         }
         Collections.sort(li);
