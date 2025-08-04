@@ -9,8 +9,8 @@ class Solution {
         if(set.contains(fruits[l]) || set.size()<2)set.add(fruits[l]);
         else if(set.size()>=2){
             int prev=fruits[l-1];
-            r=l-2;
-            while(r>0 && fruits[r]!=prev) r--;
+            r=l-1;
+            while(r>0 && fruits[r]==prev) r--;
             set.remove(fruits[r]);
             r++;
             set.add(fruits[l]);
