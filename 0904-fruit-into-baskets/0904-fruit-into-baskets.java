@@ -16,7 +16,6 @@ class Solution {
             set.add(fruits[l]);
         }
         ans=Math.max(ans,l-r+1);
-        System.out.println(l+" "+r);
         l++;
        }
        return ans;
