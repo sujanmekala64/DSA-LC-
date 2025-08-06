@@ -1,36 +1,43 @@
 class Solution {
+    public int checkmax(int val,int maxs[]){
+        for(int i=0;i<maxs.length;i++){
+            if(val<=maxs[i]) return i;
+        }
+        return -1;
+    }
+    public int findMaxi(int start,int end,int baskets[]){
+        int maxi=Integer.MIN_VALUE;
+        for(int i=start;i<end && i<baskets.length;i++){
+            maxi=Math.max(maxi,baskets[i]);
+        }
+        return maxi;
+    }
     public int numOfUnplacedFruits(int[] fruits, int[] baskets) {
         int n=(int)(Math.sqrt(fruits.length));
-        int maxs[] = new int[n+1];
-        int val=1;
-        while(val<=n+1){
-            int maxi=Integer.MIN_VALUE;
-            for(int i=(val-1)*(n+1);i<((val-1)*(n+1))+(n+1) && i<fruits.length;i++){
-                maxi=Math.max(baskets[i],maxi);
-            }
-            maxs[val-1]=maxi;
-            val++;
-        }
         int cnt=0;
+        int val=0;
+        int maxs[] = new int[n+1];
+        int idx=0;
+        while(idx<=n){
+            int maxi=Integer.MIN_VALUE;
+            for(int i=val;i<(val+n+1) && i<fruits.length;i++){
+                maxi=Math.max(maxi,baskets[i]);
+            }
+            maxs[idx]=maxi;
+            val+=(n+1);
+            idx++;
+        }
         for(int i=0;i<fruits.length;i++){
-            for(int j=0;j<=n;j++){
-                if(fruits[i]<=maxs[j]){
-                    int value=j;
-                    for(int k=value*(n+1);k<(value*(n+1))+(n+1) && k<fruits.length;k++){
-                        if(fruits[i]<=baskets[k]){
-                            if(baskets[k]==maxs[j]){
-                                baskets[k]=0;
-                                int maxi=Integer.MIN_VALUE;
-                                for(int f=value*(n+1);f<(value*(n+1))+(n+1) && f<fruits.length;f++){
-                                    maxi=Math.max(baskets[f],maxi);
-                                }
-                                maxs[value]=maxi;
-                            }
-                            baskets[k]=0;
-                            cnt++;
-                            break;
-                        }
+            int maxidx = checkmax(fruits[i],maxs);
+            if(maxidx==-1) continue;
+            for(int j=maxidx*(n+1);j<(maxidx*(n+1))+(n+1) && j<fruits.length;j++){
+                if(fruits[i]<=baskets[j]){
+                    if(baskets[j]==maxs[maxidx]){
+                        baskets[j]=0;
+                        maxs[maxidx]=findMaxi(maxidx*(n+1),(maxidx*(n+1))+(n+1),baskets);
                     }
+                    baskets[j]=0;
+                    cnt++;
                     break;
                 }
             }
