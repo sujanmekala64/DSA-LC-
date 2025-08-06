@@ -19,11 +19,7 @@ class Solution {
         int maxs[] = new int[n+1];
         int idx=0;
         while(idx<=n){
-            int maxi=Integer.MIN_VALUE;
-            for(int i=val;i<(val+n+1) && i<fruits.length;i++){
-                maxi=Math.max(maxi,baskets[i]);
-            }
-            maxs[idx]=maxi;
+            maxs[idx]=findMaxi(val,val+n+1,baskets);
             val+=(n+1);
             idx++;
         }
