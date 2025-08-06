@@ -11,8 +11,6 @@ class Solution {
             maxs[val-1]=maxi;
             val++;
         }
-        for(int i=0;i<=n;i++) System.out.print(maxs[i]+" ");
-        System.out.println();
         int cnt=0;
         for(int i=0;i<fruits.length;i++){
             for(int j=0;j<=n;j++){
@@ -20,7 +18,6 @@ class Solution {
                     int value=j;
                     for(int k=value*(n+1);k<(value*(n+1))+(n+1) && k<fruits.length;k++){
                         if(fruits[i]<=baskets[k]){
-                        System.out.println(value+" "+fruits[i]+" "+baskets[k]);
                             if(baskets[k]==maxs[j]){
                                 baskets[k]=0;
                                 int maxi=Integer.MIN_VALUE;
