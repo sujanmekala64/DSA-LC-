@@ -1,8 +1,8 @@
 class Solution {
     public double checkProb(int A,int B,double dp[][]){
-        if(A<=0 && B>0) return 1;
+        if(A<=0 && B>0) return 1.0;
         else if(A<=0 && B<=0) return 0.5;
-        else if(A>0 && B<=0) return 0;
+        else if(A>0 && B<=0) return 0.0;
         if(dp[A][B]!=-1) return dp[A][B];
         return dp[A][B]=0.25*(checkProb(A-100,B,dp)+checkProb(A-75,B-25,dp)+checkProb(A-50,B-50,dp)+checkProb(A-25,B-75,dp));
     }
