@@ -3,17 +3,12 @@ class Solution {
         if(A<=0 && B>0) return 1.0;
         else if(A<=0 && B<=0) return 0.5;
         else if(A>0 && B<=0) return 0.0;
-        if(dp[A][B]!=-1.0) return dp[A][B];
+        if(dp[A][B]!=0) return dp[A][B];
         return dp[A][B]=0.25*(checkProb(A-100,B,dp)+checkProb(A-75,B-25,dp)+checkProb(A-50,B-50,dp)+checkProb(A-25,B-75,dp));
     }
     public double soupServings(int n) {
         if(n>=4800) return 1.0;//as n value increases then probability increases at one point it will be forever 1
         double dp[][] = new double[n+1][n+1];
-        for(int i=0;i<=n;i++){
-            for(int j=0;j<=n;j++){
-                dp[i][j]=-1.0;
-            }
-        }
         return checkProb(n,n,dp);
     }
 }
