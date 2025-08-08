@@ -14,7 +14,6 @@ class Solution {
                 dp[i][j]=-1.0;
             }
         }
-        double ans = checkProb(n,n,dp);
-        return (ans);
+        return checkProb(n,n,dp);
     }
 }
