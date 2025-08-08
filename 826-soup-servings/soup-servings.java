@@ -11,10 +11,9 @@ class Solution {
         double dp[][] = new double[n+1][n+1];
         for(int i=0;i<=n;i++){
             for(int j=0;j<=n;j++){
-                dp[i][j]=-1;
+                dp[i][j]=-1.0;
             }
         }
-        double ans = checkProb(n,n,dp);
-        return (ans);
+        return checkProb(n,n,dp);
     }
 }
