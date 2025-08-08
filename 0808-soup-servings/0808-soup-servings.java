@@ -7,7 +7,7 @@ class Solution {
         return dp[A][B]=0.25*(checkProb(A-100,B,dp)+checkProb(A-75,B-25,dp)+checkProb(A-50,B-50,dp)+checkProb(A-25,B-75,dp));
     }
     public double soupServings(int n) {
-        if(n>=4000) return 1;
+        if(n>=4800) return 1;
         double dp[][] = new double[n+1][n+1];
         for(int i=0;i<=n;i++){
             for(int j=0;j<=n;j++){
