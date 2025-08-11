@@ -22,6 +22,7 @@ class Solution {
             }
             ans[i]=(int)(answ);
         }
+        
         return ans;
     }
 }
