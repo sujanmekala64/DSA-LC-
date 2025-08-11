@@ -22,7 +22,19 @@ class Solution {
             }
             ans[i]=(int)(answ);
         }
-        
         return ans;
+        // long prefix[] = new long[li.size()];
+        // long ann=1;
+        // for(int i=0;i<li.size();i++){
+        //     prefix[i]=(ann*li.get(i))%MOD;
+        //     ann=prefix[i]%MOD;
+        // }
+        // for(int i=0;i<prefix.length;i++) System.out.print(prefix[i]+" ");
+        // for(int i=0;i<queries.length;i++){
+        //     int l=queries[i][0];
+        //     int r=queries[i][1];
+        //     if(l==0) ans[i]=(int)prefix[r];
+        //     else ans[i]=(int)(prefix[r]/prefix[l-1]);
+        // }
     }
 }
