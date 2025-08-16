@@ -1,16 +1,15 @@
 class Solution {
     public int maximum69Number (int num) {
-       StringBuilder sb = new StringBuilder();
-       String val = String.valueOf(num);
-       String newstr="";
-       boolean check=false;
-       for(char p:val.toCharArray()){
-        if(p=='6' && !check){
-            check=true;
-            sb.append('9');
+        boolean check=false;
+        String s=String.valueOf(num);
+        String ans="";
+        for(char p:s.toCharArray()){
+            if(p=='6' && !check){
+                check=true;
+                ans+='9';
+            }
+            else ans+=p;
         }
-        else sb.append(p);
-       } 
-       return Integer.parseInt(sb.toString());
+        return Integer.parseInt(ans);
     }
 }
