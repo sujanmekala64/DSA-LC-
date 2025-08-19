@@ -1,7 +1,7 @@
 class Solution {
     public long zeroFilledSubarray(int[] nums) {
         long ans=0;
-        long cnt=1;
+        int cnt=1;
         for(int num:nums){
             if(num==0){
                 ans+=cnt;
