@@ -10,7 +10,7 @@ class Solution {
         int cnt=(r);
         int ans=r;
         int l=r+1;
-        while(r<nums.length && l<nums.length){
+        while(l<nums.length){
             if(nums[l]==0){
                 cnt=(l-r-1);
                 r=l;
