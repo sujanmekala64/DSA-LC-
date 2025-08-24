@@ -17,7 +17,6 @@ class Solution {
             }
             else cnt++;
             l++;
-            System.out.println(cnt+" "+ans);
             ans=Math.max(ans,cnt);
         }
         return ans;
