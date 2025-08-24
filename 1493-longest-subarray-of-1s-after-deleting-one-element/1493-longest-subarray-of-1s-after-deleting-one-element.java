@@ -7,7 +7,7 @@ class Solution {
                 break;
             }
         }
-        int cnt=(r);
+        int cnt=r;
         int ans=r;
         int l=r+1;
         while(l<nums.length){
