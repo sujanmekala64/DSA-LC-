@@ -26,10 +26,6 @@ class Solution {
             List<Character> li = map.get(key);
             for(int i=0;i<li.size();i++) sb.append(li.get(i));
         }
-        for(int i=sb.length()-1;i>=0;i--){
-            if(sb.charAt(i)==' ') sb.deleteCharAt(i);
-            else break;
-        }
-        return sb.toString();
+        return sb.toString().stripTrailing();
     }
 }
