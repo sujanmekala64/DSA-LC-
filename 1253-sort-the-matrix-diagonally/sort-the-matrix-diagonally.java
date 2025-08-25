@@ -1,22 +1,21 @@
 class Solution {
     public int[][] diagonalSort(int[][] mat) {
-        HashMap<Integer,List<Integer>> map = new HashMap<>();
-        List<Integer> li = new ArrayList<>();
+        HashMap<Integer,PriorityQueue<Integer>> map = new HashMap<>();
+        PriorityQueue<Integer> minheap = new PriorityQueue<>();
         for(int i=0;i<mat.length;i++){
             for(int j=0;j<mat[0].length;j++){
-                if(!map.containsKey((i-j))) li = new ArrayList<>();
-                else li = map.get(i-j);                    
-                li.add(mat[i][j]);
-                Collections.sort(li);
-                map.put((i-j),li);
+                if(!map.containsKey((i-j))) minheap = new PriorityQueue<>();
+                else minheap = map.get(i-j);                    
+                minheap.offer(mat[i][j]);
+                map.put((i-j),minheap);
             }
         }
         for(int i=0;i<mat.length;i++){
             for(int j=0;j<mat[0].length;j++){
                 int val = (i-j);
-                li = map.get(val);
-                mat[i][j]=li.get(0);
-                li.remove(0);
+                minheap = map.get(val);
+                mat[i][j]=minheap.peek();
+                minheap.poll();
             }
         }
         return mat;
