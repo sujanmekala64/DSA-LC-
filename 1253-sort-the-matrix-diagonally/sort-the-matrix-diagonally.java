@@ -4,10 +4,8 @@ class Solution {
         PriorityQueue<Integer> minheap = new PriorityQueue<>();
         for(int i=0;i<mat.length;i++){
             for(int j=0;j<mat[0].length;j++){
-                if(!map.containsKey((i-j))) minheap = new PriorityQueue<>();
-                else minheap = map.get(i-j);                    
-                minheap.offer(mat[i][j]);
-                map.put((i-j),minheap);
+                if(!map.containsKey((i-j))) map.put((i-j),new PriorityQueue<>());
+                map.get((i-j)).add(mat[i][j]);
             }
         }
         for(int i=0;i<mat.length;i++){
