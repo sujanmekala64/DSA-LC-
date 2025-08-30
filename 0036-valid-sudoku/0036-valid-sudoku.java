@@ -19,6 +19,7 @@ class Solution {
         return true;
     }
     public void helper(char board[][],int row,int col){
+        if(!ans) return ;
         if(col==9) return ;
         int nrow=0;
         int ncol=0;
