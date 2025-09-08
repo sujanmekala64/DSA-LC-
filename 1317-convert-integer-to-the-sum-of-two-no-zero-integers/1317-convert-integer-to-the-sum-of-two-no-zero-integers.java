@@ -1,8 +1,8 @@
 class Solution {
     public boolean noDecimal(int val){
-        String s = String.valueOf(val);
-        for(char p:s.toCharArray()){
-            if(p=='0') return false;
+        while(val>0){
+            if(val%10==0) return false;
+            val=val/10;
         }
         return true;
     }
