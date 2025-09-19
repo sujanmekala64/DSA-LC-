@@ -1,5 +1,13 @@
 class Spreadsheet {
     HashMap<String,Integer> map;
+    public boolean isNumber(String s){
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
     public Spreadsheet(int rows) {
         map=new HashMap<>();
     }
@@ -13,22 +21,20 @@ class Spreadsheet {
     }
     
     public int getValue(String formula) {
-        String s1 = "";
-        int idx=1;
-        while(formula.charAt(idx)!='+'){
-            s1+=formula.charAt(idx);
-            idx++;
+         String expr = formula.substring(1);
+        String[] parts = expr.split("\\+");
+        int sum = 0;
+
+        for (String p : parts) {
+            p = p.trim();
+            if (map.containsKey(p)) {
+                sum += map.get(p);  
+            } else if(isNumber(p)){
+                sum += Integer.parseInt(p);
+            }
+            else sum+=0;
         }
-        String s2 = formula.substring(idx+1,formula.length());
-        if(map.containsKey(s1) && map.containsKey(s2)){
-            return map.get(s1)+map.get(s2);
-        }
-        int val2=Integer.parseInt(s2);
-        if(map.containsKey(s1)){
-            return map.get(s1)+val2;
-        }
-        int val1=Integer.parseInt(s1);
-        return (val1+val2);
+        return sum;
     }   
 }
 
