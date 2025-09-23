@@ -1,5 +1,6 @@
 class Solution {
     public int compareVersion(String version1, String version2) {
+        //for this method u can directly use split method to split . without inbuilt function here is the code
         int idx1=0;
         int idx2=0;
         for(int i=0;i<version1.length();i++){ 
@@ -32,21 +33,8 @@ class Solution {
                 int num2 = Integer.parseInt(s2);
                 if(num1<num2) return -1;
                 else if(num1>num2) return 1;
-                else{
-                    if(idx1==version1.length() && idx2==version2.length()) return 0;
-                }
+                else if(idx1==version1.length() && idx2==version2.length()) return 0;
             }
-            // else{
-            //     if(idx1==version1.length() && idx2==version2.length()) return 0;
-            //     else if(version1.charAt(idx1)=='.') return -1;
-            //     else if(version2.charAt(idx2)=='.') return 1;
-            //     else{
-            //         if(version1.charAt(idx1)<version2.charAt(idx2)) return -1;
-            //         else if(version1.charAt(idx1)>version2.charAt(idx2)) return 1;
-            //         idx1++;
-            //         idx2++;
-            //     }
-            // }
         }
     }
 }
