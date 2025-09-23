@@ -34,22 +34,19 @@ class Solution {
                 else if(num1>num2) return 1;
                 else{
                     if(idx1==version1.length() && idx2==version2.length()) return 0;
-                    // else if(idx1==version1.length()) return -1;
-                    // else if(idx2==version2.length()) return 1;
                 }
             }
-            else{
-                if(idx1==version1.length() && idx2==version2.length()) return 0;
-                else if(version1.charAt(idx1)=='.') return -1;
-                else if(version2.charAt(idx2)=='.') return 1;
-                else{
-                    if(version1.charAt(idx1)<version2.charAt(idx2)) return -1;
-                    else if(version1.charAt(idx1)>version2.charAt(idx2)) return 1;
-                    idx1++;
-                    idx2++;
-                }
-            }
+            // else{
+            //     if(idx1==version1.length() && idx2==version2.length()) return 0;
+            //     else if(version1.charAt(idx1)=='.') return -1;
+            //     else if(version2.charAt(idx2)=='.') return 1;
+            //     else{
+            //         if(version1.charAt(idx1)<version2.charAt(idx2)) return -1;
+            //         else if(version1.charAt(idx1)>version2.charAt(idx2)) return 1;
+            //         idx1++;
+            //         idx2++;
+            //     }
+            // }
         }
-        // return 0;
     }
 }
