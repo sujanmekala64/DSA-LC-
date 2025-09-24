@@ -1,15 +1,14 @@
 class Solution {
     public String fractionToDecimal(int numerator, int denominator) {
-        HashMap<Integer,Integer> map = new HashMap<>();
+        HashMap<Long,Integer> map = new HashMap<>();
         StringBuilder sb = new StringBuilder();
         if(numerator==0) return "0";
-        if(numerator<0 && denominator<0);
-        else if(numerator<0 || denominator<0) sb.append('-');
-        int n=Math.abs(numerator);
-        int d=Math.abs(denominator);
-        int g=n/d;
+        if ((numerator < 0) ^ (denominator < 0)) sb.append('-');
+        long n=Math.abs((long)numerator);
+        long d=Math.abs((long)denominator);
+        long g=n/d;
         sb.append(g);
-        int num=n%d;
+        long num=n%d;
         if(num==0){
             return sb.toString();
         }
