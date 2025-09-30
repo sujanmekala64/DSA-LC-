@@ -1,15 +1,12 @@
 class Solution {
     public int triangularSum(int[] nums) {
-        List<Integer> li = new ArrayList<>();
-        for(int num:nums) li.add(num);
-        while(li.size()!=1){
-            List<Integer> temp = new ArrayList<>();
-            for(int i=1;i<li.size();i++){
-                int val = (li.get(i-1)+li.get(i))%10;
-                temp.add(val);
+        int idx=nums.length-1;
+        while(idx!=0){
+            for(int i=0;i<idx;i++){
+                nums[i]=(nums[i]+nums[i+1])%10;
             }
-            li=temp;
+            idx--;
         }
-        return li.get(0);
+        return nums[0];
     }
 }
