@@ -3,7 +3,6 @@ class Solution {
         int empty=numBottles;
         int drunk=numBottles;
         numBottles=0;
-        int cnt=1;
         while(true){
             if(empty<numExchange){
                 drunk+=numBottles;
