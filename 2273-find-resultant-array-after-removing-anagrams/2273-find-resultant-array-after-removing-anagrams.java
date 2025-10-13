@@ -6,7 +6,6 @@ class Solution {
             char chars[] = word.toCharArray();
             Arrays.sort(chars);
             String res = new String(chars);
-            System.out.println(s+" "+res);
             if(!s.equals(res)){
                 ans.add(word);
                 s=res;
