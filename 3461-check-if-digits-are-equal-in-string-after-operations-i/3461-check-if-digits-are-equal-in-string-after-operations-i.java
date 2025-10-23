@@ -6,8 +6,8 @@ class Solution {
             val=newstr;
             newstr="";
             for(int i=1;i<val.length();i++){
-                int n1 = Integer.valueOf(val.charAt(i));
-                int n2 = Integer.valueOf(val.charAt(i-1));
+                int n1 = val.charAt(i)-'0';
+                int n2 = val.charAt(i-1)-'0';
                 int tot = (n1+n2)%10;
                 newstr+=tot;
             }
