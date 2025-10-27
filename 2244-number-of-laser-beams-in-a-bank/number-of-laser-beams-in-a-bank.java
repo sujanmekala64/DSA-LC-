@@ -13,8 +13,7 @@ class Solution {
             for(int i=1;i<li.size();i++){
                 ans+=li.get(i-1)*li.get(i);
             }
-            return ans;
         }
-        return 0;
+        return ans;
     }
 }
