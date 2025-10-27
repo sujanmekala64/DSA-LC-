@@ -6,7 +6,7 @@ class Solution {
         for(String val:bank){
             int cnt=0;
             for(char p:val.toCharArray()){
-                if(p=='1') cnt++;
+                cnt+=(p-'0');
             }
             if(cnt>0){
                 if(prev==-1) prev=cnt;
