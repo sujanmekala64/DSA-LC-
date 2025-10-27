@@ -1,19 +1,23 @@
 class Solution {
     public int numberOfBeams(String[] bank) {
-        List<Integer> li = new ArrayList<>();
+        int prev=-1;
+        int ans=0;
+        int tot=0;
         for(String val:bank){
             int cnt=0;
             for(char p:val.toCharArray()){
                 if(p=='1') cnt++;
             }
-            if(cnt!=0) li.add(cnt);
-        }
-        int ans=0;
-        if(li.size()>1){
-            for(int i=1;i<li.size();i++){
-                ans+=li.get(i-1)*li.get(i);
+            if(cnt>0){
+                if(prev==-1) prev=cnt;
+                else{
+                    ans+=prev*cnt;
+                    prev=cnt;
+                }
+                tot++;
             }
         }
-        return ans;
+       if(tot>1) return ans;
+       return 0;
     }
 }
