@@ -10,31 +10,18 @@
  */
 class Solution {
     public ListNode modifiedList(int[] nums, ListNode head) {
-        HashSet<Integer> set = new HashSet<>();
-        for(int i=0;i<nums.length;i++) set.add(nums[i]);
-        // ListNode dummy = new ListNode(0,head);
-        // for(ListNode curr=dummy;curr.next!=null;){
-        //     if(set.contains(curr.next.val)) curr.next=curr.next.next;
-        //     else curr=curr.next;
-        // }
-        // return dummy.next;
-        ListNode temp = head;
-        ListNode ans = null;
-        ListNode temps = ans;
-        while(temp!=null){
-            if(!set.contains(temp.val)){
-                ListNode newnode = new ListNode(temp.val);
-                if(ans==null){
-                    ans=newnode;
-                    temps=newnode;
-                }
-                else{
-                    temps.next=newnode;
-                    temps=newnode;
-                }
+        List<Integer> li = new ArrayList<>();
+        for(int num:nums) li.add(num);
+        ListNode dummy = new ListNode(0);
+        ListNode tail=dummy;
+        while(head!=null){
+            if(!li.contains(head.val)){
+                ListNode val = new ListNode(head.val);
+                tail.next=val;
+                tail=tail.next;
             }
-            temp=temp.next;
+            head=head.next;
         }
-        return ans;
+        return dummy.next;
     }
 }
