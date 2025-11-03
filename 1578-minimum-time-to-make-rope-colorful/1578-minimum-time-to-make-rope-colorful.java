@@ -33,10 +33,6 @@ class Solution {
                 st.push(new Pair(p,time));
             }
         }
-        while(!st.isEmpty()){
-            Pair pair = st.pop();
-            System.out.println(pair.c+" "+pair.val);
-        }
         return ans;
     }
 }
