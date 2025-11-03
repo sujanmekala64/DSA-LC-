@@ -13,25 +13,21 @@ class Solution {
         for(int i=0;i<colors.length();i++){
             char p=colors.charAt(i);
             int time=neededTime[i];
+            boolean check=true;
             if(!st.isEmpty()){
                 Pair pair = st.peek();
                 if(pair.c==p){
                     if(pair.val<=time){
                         st.pop();
                         ans+=pair.val;
-                        st.push(new Pair(p,time));
                     }
                     else{
                         ans+=time;
+                        check=false;
                     }
                 }
-                else{
-                    st.push(new Pair(p,time));
-                }
             }
-            else{
-                st.push(new Pair(p,time));
-            }
+            if(check) st.push(new Pair(p,time));
         }
         return ans;
     }
