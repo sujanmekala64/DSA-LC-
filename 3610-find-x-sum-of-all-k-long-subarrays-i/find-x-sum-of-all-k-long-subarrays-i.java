@@ -57,7 +57,6 @@ class Solution {
                 }
                 ans[index]=temp;
             }
-            System.out.println(start+" "+idx+" "+ans[index]);
             idx++;
             start++;
             index++;
