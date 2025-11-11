@@ -1,25 +1,20 @@
 class Solution {
     public List<Integer> maxScoreIndices(int[] nums) {
+        int z=0;
+        int o=0; 
+        for(int num:nums) if(num==1) o++;
+        int arr[] = new int[nums.length+1];
+        arr[0]=o;
+        int idx=1;
+        int max=arr[0];
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==0) z++;
+            else if(nums[i]==1) o--;
+            arr[idx++]=(z+o);
+            if((z+o)>max) max=z+o;
+        }
         List<Integer> li = new ArrayList<>();
-        int arr[]= new int[nums.length+1];
-        int idx=0;
-        int maxi=-1;
-        while(idx<=nums.length){
-            int sumleft=0;
-            int sumright=0;
-            for(int i=0;i<idx;i++){
-                if(nums[i]==0) sumleft++;
-            }
-            for(int i=idx;i<nums.length;i++){
-                if(nums[i]==1) sumright++;
-            }
-            arr[idx]=sumleft+sumright;
-            maxi=Math.max(maxi,arr[idx]);
-            idx++;
-        }
-        for(int i=0;i<=nums.length;i++){
-            if(arr[i]==maxi) li.add(i);
-        }
+        for(int i=0;i<arr.length;i++) if(arr[i]==max) li.add(i);
         return li;
     }
 }
