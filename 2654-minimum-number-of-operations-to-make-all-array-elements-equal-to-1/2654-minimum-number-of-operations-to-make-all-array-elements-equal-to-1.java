@@ -1,11 +1,7 @@
 class Solution {
     public int gcd(int a,int b){
-        int val=Math.min(a,b);
-        while(val>1){
-            if(a%val==0 && b%val==0) return val;
-            val--;
-        }
-        return 1;
+        if(a==0) return b;
+        return gcd(b%a,a);
     }
     public int minOperations(int[] nums) {
         int ones=0;
