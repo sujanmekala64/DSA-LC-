@@ -11,15 +11,8 @@ class Solution {
                 if(c2+1<n) diff[j][c2+1]-=1;
             }
         }
-        // for(int i=0;i<n;i++){
-        //     for(int j=0;j<n;j++){
-        //         System.out.print(diff[i][j]+" ");
-        //     }
-        //     System.out.println();
-        // }
         for(int i=0;i<n;i++){
             for(int j=1;j<n;j++){
-                System.out.println(i+" "+j);
                 diff[i][j]=diff[i][j]+diff[i][j-1];
             }
         }
