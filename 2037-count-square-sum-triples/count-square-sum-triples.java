@@ -1,9 +1,6 @@
 class Solution {
     public int countTriples(int n) {
-        int ans=0;
-        int r;
-        int l;
-        int val;
+        int ans=0,r,l,val;
         for(int i=n;i>0;i--){
             r=i-1;
             l=1;
