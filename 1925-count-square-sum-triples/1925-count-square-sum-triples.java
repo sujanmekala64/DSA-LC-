@@ -1,11 +1,14 @@
 class Solution {
     public int countTriples(int n) {
         int ans=0;
+        int r;
+        int l;
+        int val;
         for(int i=n;i>0;i--){
-            int r=i-1;
-            int l=1;
+            r=i-1;
+            l=1;
             while(l<r){
-                int val = (l*l+r*r);
+                val = (l*l+r*r);
                 if(val==i*i){
                     ans+=2;
                     l++;
