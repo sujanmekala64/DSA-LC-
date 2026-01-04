@@ -12,7 +12,6 @@ class Solution {
                 }
             }
         }
-        System.out.println(num+" "+ans+" "+sum);
         if(ans==4) return sum;
         return 0;
     }
