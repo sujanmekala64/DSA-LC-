@@ -17,10 +17,9 @@ class Solution {
     }
     public int sumFourDivisors(int[] nums) {
         int ans=0;
-        HashMap<Integer,Integer> map = new HashMap<>();
         for(int num:nums){
-            if(!map.containsKey(num)) map.put(num,check(num));
-            ans+=map.get(num);
+            // if(!map.containsKey(num)) map.put(num,check(num));
+            ans+=check(num);
         }
         return ans;
     }
