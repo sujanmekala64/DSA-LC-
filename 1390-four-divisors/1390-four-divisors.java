@@ -10,6 +10,7 @@ class Solution {
                     ans+=1;
                     sum+=num/i;
                 }
+                if(ans>4) return 0;
             }
         }
         if(ans==4) return sum;
@@ -18,7 +19,6 @@ class Solution {
     public int sumFourDivisors(int[] nums) {
         int ans=0;
         for(int num:nums){
-            // if(!map.containsKey(num)) map.put(num,check(num));
             ans+=check(num);
         }
         return ans;
