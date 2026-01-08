@@ -1,6 +1,6 @@
 class Solution {
     public int check(int nums1[],int nums2[],int idx1,int idx2,int m,int n,int dp[][]){
-        if(idx1>=m || idx2>=n) return -1000000000;
+        if(idx1>=m || idx2>=n) return -100000000;
         if(dp[idx1][idx2]!=Integer.MIN_VALUE) return dp[idx1][idx2];
         int first = nums1[idx1]*nums2[idx2];
         int callfirst = first+check(nums1,nums2,idx1+1,idx2+1,m,n,dp);
