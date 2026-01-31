@@ -3,8 +3,9 @@ class Solution {
         int mini=Integer.MAX_VALUE;
         int f=target-'a';
         char h='a';
+        int g=0;
         for(char s:letters){
-            int g = s-'a';
+            g = s-'a';
             if(g<f && mini>26-f+g){
                 mini=26-f+g;
                 h=s;
