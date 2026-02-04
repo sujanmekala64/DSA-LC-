@@ -5,16 +5,16 @@ class Solution {
         int inc2 = 0;
         // if(nums.)
         for(int i=1;i<nums.length;i++){
-            if(nums[i-1]<nums[i] && inc1==0){
+            if(nums[i-1]<nums[i] && dec1==0){
                 inc1=1;
             }
-            else if(nums[i-1]>nums[i] && inc1!=0){
+            else if(nums[i-1]>nums[i] && inc1!=0 && inc2!=1){
                 dec1=1;
             }
             else if(nums[i-1]<nums[i]){
                 inc2=1;
             }
-            else if(inc1==0) return false;
+            else return false;
         }
         return inc1==1 && dec1==1 && inc2==1;
     }
