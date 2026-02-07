@@ -3,7 +3,7 @@ class Solution {
         int as=0;
         for(char p:s.toCharArray()) if(p=='a') as++;
         int bs=0;
-        int ans=Integer.MAX_VALUE;
+        int ans=10000;
         for(char p:s.toCharArray()){
             if(p=='a') as--;
             ans=Math.min(ans,(as+bs));
