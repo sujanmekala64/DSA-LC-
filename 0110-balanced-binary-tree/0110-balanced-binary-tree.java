@@ -13,19 +13,20 @@
  *     }
  * }
  */
- 
 class Solution {
-    public int maxdepth(TreeNode root){
-        if(root==null) return 0;
-        int le = maxdepth(root.left);
-        if(le==-1) return -1;
-        int ri = maxdepth(root.right);
-        if(ri==-1) return -1;
-        if(Math.abs(le-ri)>1) return -1;
-        return Math.max(le,ri)+1;
+    boolean ans=true;
+    public int checkDepth(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        if(ans==false) return 0;
+        int le=checkDepth(root.left);
+        int ri=checkDepth(root.right);
+        if(Math.abs(le-ri)>1) ans=false;
+        return 1+Math.max(le,ri);
     }
     public boolean isBalanced(TreeNode root) {
-        if(root==null) return true;
-        return maxdepth(root)!=-1;
+        int g= checkDepth(root);
+        return ans;
     }
 }
