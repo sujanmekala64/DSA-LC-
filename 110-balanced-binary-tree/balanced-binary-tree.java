@@ -19,8 +19,7 @@ class Solution {
         if(root==null){
             return 0;
         }
-        // int le = 0;
-        // int ri = 0;
+        if(ans==false) return 0;
         int le=checkDepth(root.left);
         int ri=checkDepth(root.right);
         if(Math.abs(le-ri)>1) ans=false;
