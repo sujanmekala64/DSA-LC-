@@ -20,9 +20,6 @@ class Solution {
             else i++;
         }
         List<Integer> ans = new ArrayList<>();
-        for(int j=0;j<nums.length;j++){
-            System.out.println(j+" "+nums[j]);
-        }
         for(int j=0;j<nums.length;j++) if(j+1!=nums[j]) ans.add(j+1);
         return ans;
     }
