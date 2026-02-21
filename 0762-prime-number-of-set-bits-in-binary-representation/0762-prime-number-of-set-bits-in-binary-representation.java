@@ -11,7 +11,8 @@ class Solution {
        String s="";
        int cnt=0;
        for(int i=left;i<=right;i++){
-         cnt=Integer.bitCount(i); //returns no. of 1's
+         s = Integer.toBinaryString(i);
+         cnt = s.length() - s.replace("1","").length();
          if(isPrime(cnt)) ans++;
        } 
        return ans;
