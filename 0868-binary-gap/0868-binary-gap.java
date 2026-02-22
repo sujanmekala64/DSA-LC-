@@ -1,20 +1,20 @@
 class Solution {
     public int binaryGap(int n) {
-        String s = Integer.toBinaryString(n);
-        int ans=0;
         int prev=-1;
-        char p='a';
-        for(int i=0;i<s.length();i++){
-            p=s.charAt(i);
-            if(p=='1'){
-                if(prev==-1){
-                    prev=i;
-                }
+        int cnt=1;
+        int mod=0;
+        int ans=0;
+        while(n>0){
+            mod=n%2;
+            if(mod==1){
+                if(prev==-1) prev=cnt;
                 else{
-                    ans=Math.max(ans,(i-prev));
-                    prev=i;
+                    ans=Math.max(ans,cnt-prev);
+                    prev=cnt;
                 }
             }
+            cnt++;
+            n/=2;
         }
         return ans;
     }
