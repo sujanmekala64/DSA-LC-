@@ -15,7 +15,6 @@ class Solution {
             if(g!=-1 && i<g) ans+=travel[i];
             if(p!=-1 && i<p) ans+=travel[i];
             if(m!=-1 && i<m) ans+=travel[i];
-            // System.out.println(ans);
         }
         return ans+t;
     }
