@@ -8,12 +8,12 @@ class Solution {
         while(n>0){
             sb.append("1");
             f=sb.length();
+            if(f>=k) return sb.charAt(k-1);
             for(int i=sb.length()-2;i>=0;i--){
                 sb.append((char)'1'-sb.charAt(i));
             }
             n--;
         }
-        // System.out.println(sb);
         return sb.charAt(k-1);
     }
 }
