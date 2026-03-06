@@ -6,5 +6,7 @@ class Solution {
         else if(s.charAt(i)=='0') ch=true;
        } 
        return true;
+    //    if(s.contains("01")) return false;
+    //    return true;
     }
 }
