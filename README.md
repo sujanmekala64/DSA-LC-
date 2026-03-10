@@ -7,6 +7,7 @@ https://leetcode.com/u/Mekala_Sujan/
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0139-word-break](https://github.com/sujanmekala64/DSA-LC-/tree/main/0139-word-break/) | Medium |
+| [0208-implement-trie-prefix-tree](https://github.com/sujanmekala64/DSA-LC-/tree/main/0208-implement-trie-prefix-tree/) | Medium |
 | [1233-remove-sub-folders-from-the-filesystem](https://github.com/sujanmekala64/DSA-LC-/tree/main/1233-remove-sub-folders-from-the-filesystem/) | Medium |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/sujanmekala64/DSA-LC-/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
 | [1758-minimum-changes-to-make-alternating-binary-string](https://github.com/sujanmekala64/DSA-LC-/tree/main/1758-minimum-changes-to-make-alternating-binary-string/) | Easy |
@@ -33,6 +34,7 @@ https://leetcode.com/u/Mekala_Sujan/
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0139-word-break](https://github.com/sujanmekala64/DSA-LC-/tree/main/0139-word-break/) | Medium |
+| [0208-implement-trie-prefix-tree](https://github.com/sujanmekala64/DSA-LC-/tree/main/0208-implement-trie-prefix-tree/) | Medium |
 ## Dynamic Programming
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -41,6 +43,7 @@ https://leetcode.com/u/Mekala_Sujan/
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0139-word-break](https://github.com/sujanmekala64/DSA-LC-/tree/main/0139-word-break/) | Medium |
+| [0208-implement-trie-prefix-tree](https://github.com/sujanmekala64/DSA-LC-/tree/main/0208-implement-trie-prefix-tree/) | Medium |
 | [1233-remove-sub-folders-from-the-filesystem](https://github.com/sujanmekala64/DSA-LC-/tree/main/1233-remove-sub-folders-from-the-filesystem/) | Medium |
 ## Memoization
 | Problem Name | Difficulty |
@@ -50,4 +53,8 @@ https://leetcode.com/u/Mekala_Sujan/
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1233-remove-sub-folders-from-the-filesystem](https://github.com/sujanmekala64/DSA-LC-/tree/main/1233-remove-sub-folders-from-the-filesystem/) | Medium |
+## Design
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0208-implement-trie-prefix-tree](https://github.com/sujanmekala64/DSA-LC-/tree/main/0208-implement-trie-prefix-tree/) | Medium |
 <!---LeetCode Topics End-->
