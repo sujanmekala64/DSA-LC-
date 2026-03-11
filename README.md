@@ -57,4 +57,8 @@ https://leetcode.com/u/Mekala_Sujan/
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0208-implement-trie-prefix-tree](https://github.com/sujanmekala64/DSA-LC-/tree/main/0208-implement-trie-prefix-tree/) | Medium |
+## Bit Manipulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1009-complement-of-base-10-integer](https://github.com/sujanmekala64/DSA-LC-/tree/main/1009-complement-of-base-10-integer/) | Easy |
 <!---LeetCode Topics End-->
