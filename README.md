@@ -26,10 +26,12 @@ https://leetcode.com/u/Mekala_Sujan/
 | [0139-word-break](https://github.com/sujanmekala64/DSA-LC-/tree/main/0139-word-break/) | Medium |
 | [1233-remove-sub-folders-from-the-filesystem](https://github.com/sujanmekala64/DSA-LC-/tree/main/1233-remove-sub-folders-from-the-filesystem/) | Medium |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/sujanmekala64/DSA-LC-/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
+| [3546-equal-sum-grid-partition-i](https://github.com/sujanmekala64/DSA-LC-/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 ## Matrix
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/sujanmekala64/DSA-LC-/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
+| [3546-equal-sum-grid-partition-i](https://github.com/sujanmekala64/DSA-LC-/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -61,4 +63,12 @@ https://leetcode.com/u/Mekala_Sujan/
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1009-complement-of-base-10-integer](https://github.com/sujanmekala64/DSA-LC-/tree/main/1009-complement-of-base-10-integer/) | Easy |
+## Enumeration
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3546-equal-sum-grid-partition-i](https://github.com/sujanmekala64/DSA-LC-/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
+## Prefix Sum
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3546-equal-sum-grid-partition-i](https://github.com/sujanmekala64/DSA-LC-/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 <!---LeetCode Topics End-->
