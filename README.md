@@ -57,6 +57,7 @@ https://leetcode.com/u/Mekala_Sujan/
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0733-flood-fill](https://github.com/sujanmekala64/DSA-LC-/tree/main/0733-flood-fill/) | Easy |
+| [0785-is-graph-bipartite](https://github.com/sujanmekala64/DSA-LC-/tree/main/0785-is-graph-bipartite/) | Medium |
 | [1233-remove-sub-folders-from-the-filesystem](https://github.com/sujanmekala64/DSA-LC-/tree/main/1233-remove-sub-folders-from-the-filesystem/) | Medium |
 ## Design
 | Problem Name | Difficulty |
@@ -78,4 +79,13 @@ https://leetcode.com/u/Mekala_Sujan/
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0733-flood-fill](https://github.com/sujanmekala64/DSA-LC-/tree/main/0733-flood-fill/) | Easy |
+| [0785-is-graph-bipartite](https://github.com/sujanmekala64/DSA-LC-/tree/main/0785-is-graph-bipartite/) | Medium |
+## Union-Find
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0785-is-graph-bipartite](https://github.com/sujanmekala64/DSA-LC-/tree/main/0785-is-graph-bipartite/) | Medium |
+## Graph Theory
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0785-is-graph-bipartite](https://github.com/sujanmekala64/DSA-LC-/tree/main/0785-is-graph-bipartite/) | Medium |
 <!---LeetCode Topics End-->
