@@ -1,43 +1,38 @@
 class Solution {
-    public boolean checks(int start,int cols[],int graph[][],ArrayList<ArrayList<Integer>> adj){
+    public boolean checkBiPartite(List<List<Integer>> ans,int vis[],int start){
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(start);
-        cols[start]=0;
+        queue.offer(start);
+        vis[start]=0;
         while(!queue.isEmpty()){
-            int f = queue.size();
-            while(f!=0){
+            int size=queue.size();
+            while(size-->0){
                 int val = queue.poll();
-                ArrayList<Integer> li = adj.get(val);
+                int color=vis[val];
+                List<Integer> li = ans.get(val);
                 for(int i=0;i<li.size();i++){
-                    int child = li.get(i);
-                    if(cols[child]==-1){
-                        cols[child]=1-cols[val];
-                        queue.add(child);
+                    if(vis[li.get(i)]==-1){
+                        queue.offer(li.get(i));
+                        vis[li.get(i)]=1-color;
                     }
-                    else if(cols[child]==cols[val]) return false;
+                    else if(vis[li.get(i)]==vis[val]) return false;
                 }
-                f--;
             }
         }
         return true;
     }
     public boolean isBipartite(int[][] graph) {
-        ArrayList<ArrayList<Integer>> adj = new ArrayList<>(); //you can directly use graph[][] instead of using adjacency matrix
-        int n = graph.length;
-        for(int i=0;i<n;i++){
-            adj.add(new ArrayList<>());
-        }
+        List<List<Integer>> ans = new ArrayList<>();
+        for(int i=0;i<graph.length;i++) ans.add(new ArrayList<>());
         for(int i=0;i<graph.length;i++){
             for(int j=0;j<graph[i].length;j++){
-                int nf = graph[i][j];
-                adj.get(i).add(nf);
+                ans.get(i).add(graph[i][j]);
             }
         }
-        int cols[] = new int[n]; // first we keep -1 and then  the 2 colors we keep as 0 and 1
-        Arrays.fill(cols,-1);
-        for(int i=0;i<n;i++){
-            if(cols[i]==-1){
-                if(checks(i,cols,graph,adj)==false) return false;
+        int vis[] = new int[graph.length];
+        Arrays.fill(vis,-1);
+        for(int i=0;i<graph.length;i++){
+            if(vis[i]==-1){
+                if(!checkBiPartite(ans,vis,i)) return false;
             }
         }
         return true;
