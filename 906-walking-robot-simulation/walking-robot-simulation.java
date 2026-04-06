@@ -34,7 +34,6 @@ class Solution {
                 int cnt=x*x+y*y;
                 ans=Math.max(ans,cnt);
             }
-            System.out.println(cmd+" "+dx+" "+dy);
         }
         return ans;
     }
