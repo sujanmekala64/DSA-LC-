@@ -1,22 +1,14 @@
 class Solution {
     public int[] sortByBits(int[] arr) {
-        TreeMap<Integer,List<Integer>> map = new TreeMap<>();
-        int cnt=0;
-        for(int val:arr){
-            cnt=Integer.bitCount(val);
-            if(!map.containsKey(cnt)){
-                map.put(cnt,new ArrayList<>());
-            }
-            map.get(cnt).add(val);
-        }
-        int idx=0;
-        for(int key:map.keySet()){
-            List<Integer> ans = map.get(key);
-            Collections.sort(ans);
-            for(int i=0;i<ans.size();i++){
-                arr[idx++]=ans.get(i);
-            }
-        }
+        Integer boxedarray[] = new Integer[arr.length];
+        for(int i=0;i<arr.length;i++) boxedarray[i]=arr[i];
+        Arrays.sort(boxedarray,(a,b)->{
+            int vala = Integer.bitCount(a);
+            int valb = Integer.bitCount(b);
+            if(vala==valb) return a-b;
+            return vala-valb;
+        });
+        for(int i=0;i<arr.length;i++) arr[i]=boxedarray[i];
         return arr;
     }
 }
