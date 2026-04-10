@@ -6,7 +6,6 @@ class Solution {
             map.get(nums[i]).add(i);
         }
         int ans=500;
-        System.out.println(map);
         for(int key:map.keySet()){
             List<Integer> li = map.get(key);
             if(li.size()>2){
