@@ -1,7 +1,4 @@
 class Solution {
-    // class Pair{
-    //     int 
-    // }
     public String getHint(String secret, String guess) {
         int secfreq[] = new int[10];
         int guessfreq[] = new int[10];
@@ -19,7 +16,6 @@ class Solution {
             cows+=Math.min(secfreq[i],guessfreq[i]);
         }
        }
-    //    System.out.println(bulls+" "+cows);
        return bulls+"A"+cows+"B";
     }
 }
