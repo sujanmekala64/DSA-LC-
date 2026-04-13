@@ -7,8 +7,9 @@ class Solution {
         //     }
         // }
         // return ans;
-        for(int i=0;i<nums.length;i++){
-            if(start+i<nums.length && nums[start+i]==target) return i;
+        int n=nums.length;
+        for(int i=0;i<n;i++){
+            if(start+i<n && nums[start+i]==target) return i;
             if(start-i>=0 && nums[start-i]==target) return i;
         }
         return -1;
