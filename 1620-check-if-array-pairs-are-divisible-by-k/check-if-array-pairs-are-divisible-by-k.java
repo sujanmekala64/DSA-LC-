@@ -6,7 +6,6 @@ class Solution {
         }
         if(rem[0]%2==1) return false;
         for(int i=1;i<=k/2;i++){
-
             if(rem[i]!=rem[k-i]) return false;
         }
         return true;
