@@ -5,8 +5,8 @@ class Solution {
         int n=words.length;
         int steps=0;
         while(steps<n){
-            left = ((left%n)+n)%n;
-            right = ((right%n)+n)%n;
+            left = (left+n)%n;
+            right = (right+n)%n;
             if(words[left].equals(target)) return steps;
             else if(words[right].equals(target)) return steps;
             steps++;
