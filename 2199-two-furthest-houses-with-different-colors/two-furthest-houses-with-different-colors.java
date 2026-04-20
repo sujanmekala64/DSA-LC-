@@ -12,7 +12,6 @@ class Solution {
             r--;
         }
         r=n-1;
-        System.out.println(ans);
         while(l<n-1){
             if(colors[l]!=colors[r]){
                 System.out.println(l);
