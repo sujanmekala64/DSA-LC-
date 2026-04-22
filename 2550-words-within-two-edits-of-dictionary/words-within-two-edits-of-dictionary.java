@@ -8,7 +8,7 @@ class Solution {
                 word=0;
                 for(int k=0;k<len;k++){
                     if(dictionary[i].charAt(k)!=queries[j].charAt(k)) word++;
-                    // if(word>2) break;
+                    if(word>2) break;
                 }
                 if(word<=2){
                     ans.add(queries[j]);
