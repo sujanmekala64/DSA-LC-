@@ -14,7 +14,6 @@ class Solution {
                 while(count[i]-->0 && coins>=i){
                     ans++;
                     coins-=i;
-                    System.out.println(i+" "+ans+" "+coins);
                 }
             }
         }
