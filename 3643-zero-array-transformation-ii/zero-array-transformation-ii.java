@@ -34,7 +34,6 @@ class Solution {
         int ans=-1;
         while(l<=h){
             int mid=l+(h-l)/2;
-            // System.out.println(mid);
             if(check(nums,queries,mid)){
                 h=mid-1;
                 ans=mid+1;
