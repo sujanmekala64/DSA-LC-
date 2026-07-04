@@ -1,43 +1,46 @@
 class Solution {
-
-    private int n, q;
-
-    private boolean isValid(int[] nums, int[][] que, int k) {
-        int[] dist = new int[n];
-
-        for (int i = 0; i <= k; i++) {
-            int l = que[i][0], r = que[i][1], val = que[i][2];
-            dist[l] += val;
-            if (r + 1 < n)
-                dist[r + 1] -= val;
+    public boolean checkZeroes(int arr[]){
+        boolean check=true;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>0){
+                check=false;
+                break;
+            }
         }
-
-        int cumSum = 0;
-        for (int i = 0; i < n; i++) {
-            cumSum += dist[i];
-            dist[i] += cumSum;
-            if (nums[i] - cumSum > 0)
-                return false;
+        return check;
+    }
+    public boolean check(int nums[],int queries[][],int nthquery){
+        int diff[] = new int[nums.length+1];
+        for(int i=0;i<=nthquery;i++){
+            diff[queries[i][0]]+=queries[i][2];
+            diff[queries[i][1]+1]-=queries[i][2];
+        }
+        int n=nums.length;
+        for(int i=1;i<n;i++){
+            diff[i]=diff[i-1]+diff[i];
+        }
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>diff[i]) return false;
         }
         return true;
+        // if(checkZeroes(diff)) return true;
+        // return false;
     }
-
-    public int minZeroArray(int[] nums, int[][] que) {
-        n = nums.length;
-        q = que.length;
-
-        if (Arrays.stream(nums).allMatch(x -> x == 0)) {
-            return 0; // No query required as all elements are already zero
-        }
-
-        int l = 0, h = q - 1, ans = -1;
-        while (l <= h) {
-            int mid = (l + h) / 2;
-            if (isValid(nums, que, mid)) {
-                ans = mid + 1;
-                h = mid - 1;
-            } else {
-                l = mid + 1;
+    public int minZeroArray(int[] nums, int[][] queries) {
+        int n=nums.length;
+        if(checkZeroes(nums)) return 0;
+        int l=0;
+        int h=queries.length-1;
+        int ans=-1;
+        while(l<=h){
+            int mid=l+(h-l)/2;
+            // System.out.println(mid);
+            if(check(nums,queries,mid)){
+                h=mid-1;
+                ans=mid+1;
+            }
+            else{
+                l=mid+1;
             }
         }
         return ans;
