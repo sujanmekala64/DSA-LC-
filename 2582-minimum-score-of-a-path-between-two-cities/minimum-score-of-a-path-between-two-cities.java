@@ -11,16 +11,16 @@ class Solution {
         }
         Queue<Integer> queue = new LinkedList<>();
         queue.add(1);
-        HashSet<Integer> set =new HashSet<>();
+        int vis[] = new int[n+1];
         while(!queue.isEmpty()){
             int size=queue.size();
             for(int t=0;t<size;t++){
                 int val=queue.poll();
-                set.add(val);
+                vis[val]=1;
                 for(int i=0;i<adj.get(val).size();i++){
                     int one = adj.get(val).get(i)[0];
                     int wei = adj.get(val).get(i)[1];
-                    if(!set.contains(one)) queue.add(one);
+                    if(vis[one]==0) queue.add(one);
                     mini=Math.min(mini,wei);
                 }
             }
