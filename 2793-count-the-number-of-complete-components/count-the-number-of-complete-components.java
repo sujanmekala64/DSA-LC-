@@ -23,15 +23,11 @@ class Solution {
         int vis[]=new int[n];
         int ans=0;
         boolean ch=false;
-        // for(int i=0;i<n;i++){
-        //     System.out.println(i+" "+degree[i]);
-        // }
         for(int i=0;i<n;i++){
             if(vis[i]==0){
                 List<Integer> li = new ArrayList<>();
                 CountSizeDFS(i,adj,li,vis);
                 int size=li.size()-1;
-                System.out.println(i+" "+size);
                 if(degree[i]!=size) continue;
                 for(int vals:adj.get(i)){
                     if(degree[vals]!=size){
@@ -39,10 +35,7 @@ class Solution {
                         break;
                     }
                 }
-                if(!ch){
-                    ans++;
-                    System.out.println("Y"+" "+i);
-                }
+                if(!ch) ans++;
                 ch=false;
             }
         }
