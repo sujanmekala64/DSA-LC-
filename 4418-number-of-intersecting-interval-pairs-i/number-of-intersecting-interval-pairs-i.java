@@ -12,9 +12,6 @@ class Solution {
         int ans=0;
         int cnt=0;
         for(int val[]:li){
-            System.out.println(val[0]+" "+val[1]);
-        }
-        for(int val[]:li){
             if(val[1]==1){
                 ans+=cnt;
                 cnt++;
